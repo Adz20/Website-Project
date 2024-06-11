@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <meta name="author" content="LasTeam" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/L.Control.Layers.Tree.css" />
+    <link rel="stylesheet" href="css/qgis2web.css" />
+    <link rel="stylesheet" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="css/leaflet-search.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Coffee Map</title>
+
+    <style>
+      .fotokafe {
+        background-color: #dce5e4;
+        border-radius: 20px;
+      }
+
+      .owl-carousel .item {
+        margin-right: 20px; /* Atur margin di sini */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Start Header/Navigation -->
+    <nav
+      class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+      arial-label="CaffeBot navigation bar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Coffee Map<span>.</span></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsCaffeBot"
+          aria-controls="navbarsCaffeBot"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsCaffeBot">
+          <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li>
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li><a class="nav-link" href="index.html#carakafe">Petunjuk</a></li>
+            <li><a class="nav-link" href="index.html#petakafebgr">Peta</a></li>
+            <li class="nav-item active">
+              <a class="nav-link" href="galeri.html">Galeri</a>
+            </li>
+            <li><a class="nav-link" href="daftarkafe.html">Daftar Kafe</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Header/Navigation -->
+
+    <!-- Start Hero Section -->
+    <section>
+      <div class="hero">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-5">
+              <div class="intro-excerpt">
+                <h1>
+                  Foto-foto Cafe <span clsas="d-block"> di Bogor Tengah</span>
+                </h1>
+                <p class="mb-4">
+                  Bagaimana penampilan cafe yang ingin saya kunjungi?
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="hero-img-wrap">
+                <img src="images/cafe1.png" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Data Map -->
+    <section>
+      <div class="blog-section">
+        <div class="container">
+          <div class="owl-carousel owl-theme">
+            <!-- Item 1 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/TheGadeCoffee&GoldBogor.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">The Gade Coffee & Gold Bogor</a></h3>
+                  <div class="meta">
+                    <span>by <a>Ika Ratna</a></span>
+                    <span>on <a>Jan, 2023</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/GerimisCoffeeandSpace.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Gerimis Coffee and Space</a></h3>
+                  <div class="meta">
+                    <span>by <a>Taufik Perdana</a></span>
+                    <span>on <a>Jun, 2021</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/TerasAlohaCoffeeBogor.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Teras Aloha Coffee Bogor</a></h3>
+                  <div class="meta">
+                    <span>on <a>Apr, 2023</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/UncleJoKopi-ID.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Uncle Jo Coffee Shop</a></h3>
+                  <div class="meta">
+                    <span>by <a>Maria Regina Yulianti</a></span>
+                    <span>on <a>Sep, 2023</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/KemenadyCoffeeandCo-WorkingSpace.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Kemenady Coffee and Co-Working Space</a></h3>
+                  <div class="meta">
+                    <span>by <a>Riza Putranto</a></span>
+                    <span>on <a>May, 2017</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/VolcanCoffee&Space.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Volcan Coffee & Space</a></h3>
+                  <div class="meta">
+                    <span>by <a>Ari Ariani</a></span>
+                    <span>on <a>Feb, 2023</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Duplicate items for demonstration -->
+            <!-- Duplicate Item 4 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/UncleJoKopi-ID.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Uncle Jo Coffee Shop</a></h3>
+                  <div class="meta">
+                    <span>by <a>Maria Regina Yulianti</a></span>
+                    <span>on <a>Sep, 2023</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Duplicate Item 5 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/KemenadyCoffeeandCo-WorkingSpace.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Kemenady Coffee and Co-Working Space</a></h3>
+                  <div class="meta">
+                    <span>by <a>Riza Putranto</a></span>
+                    <span>on <a>May, 2017</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Duplicate Item 6 -->
+            <div class="item">
+              <div class="post-entry fotokafe">
+                <a class="post-thumbnail">
+                  <img
+                    src="images/VolcanCoffee&Space.png"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </a>
+                <div class="post-content-entry">
+                  <h3><a href="#">Volcan Coffee & Space</a></h3>
+                  <div class="meta">
+                    <span>by <a>Ari Ariani</a></span>
+                    <span>on <a>Feb, 2023</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-green-outline btnprev">Prev</button>
+          <button class="btn btn-green-outline btnnext">Next</button>
+
+          <script>
+            $(document).ready(function () {
+              var owl = $(".owl-carousel");
+              owl.owlCarousel();
+
+              // Tombol custom
+              $(".btnnext").click(function () {
+                owl.trigger("next.owl.carousel");
+              });
+              $(".btnprev").click(function () {
+                owl.trigger("prev.owl.carousel", [300]);
+              });
+            });
+          </script>
+        </div>
+
+        <script>
+          $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+              items: 3,
+              loop: true,
+              margin: 20,
+              nav: true,
+              responsive: {
+                0: {
+                  items: 1,
+                },
+                600: {
+                  items: 2,
+                },
+                1000: {
+                  items: 3,
+                },
+              },
+            });
+          });
+        </script>
+      </div>
+    </section>
+    <!-- End Data Map -->
+
+    <!-- Start Footer Section -->
+    <footer class="footer-section">
+      <div class="container relative">
+        <div class="sofa-img">
+          <img src="images/kopi3.png" alt="Image" class="img-fluid" />
+        </div>
+
+        <div class="row g-5 mb-5">
+          <div class="col-lg-4">
+            <div class="mb-4 footer-logo-wrap">
+              <a href="#" class="footer-logo">Coffee Map<span>.</span></a>
+            </div>
+            <p class="mb-4">
+              Coffee Map merupakan website yang dibuat khusus untuk kalian yang
+              sedang mencari kafe-kafe di wilayah Bogor tengah.
+            </p>
+            <i class="bi bi-facebook"></i>
+
+            <ul class="list-unstyled custom-social">
+              <li>
+                <a href="#"><span class="fa fa-brands fa-facebook-f"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="fa fa-brands fa-instagram"></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-top copyright">
+          <div class="row pt-4">
+            <div class="col-lg-6">
+              <p class="mb-2 text-center text-lg-start">
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                . All Rights Reserved.
+                <a href="#">LasTeam</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer Section -->
+  </body>
+</html>
